@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smash
+
+Smash is a Next.js app that takes text, image, and audio inputs and generates randomized smash canvases. Each smash builds a new composite by slicing text into word chunks, cropping image regions, and sampling audio like a DJ-style mix. Outputs can be downloaded as an image or as a video when audio is present.
+
+## Features
+- Text, image, and audio inputs
+- Randomized compositing per smash
+- DJ-style audio sampling (grid chops, phrases, stutters)
+- Audio preview for the latest smash
+- Image download (PNG) or video download (WebM)
+- Input manager with modal list, previews, and removal
+- Keyboard shortcut: press `s` to smash
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Add text lines or use “Add random quote”.
+2. Upload images and/or audio files.
+3. Adjust Smash controls (layers, BPM, grid, etc.).
+4. Press **Smash** (or hit `s`).
+5. Preview audio if present, then download the image or video.
 
-## Learn More
+## Audio Sampling Behavior
+- Beat grid is derived from BPM and grid division (1/4, 1/8, 1/16).
+- Each audio layer chooses between:
+  - Grid chops
+  - Longer phrases
+  - Optional stutter repeats
+- Slight playback-rate variation and short fades are applied.
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
+- Video export uses `MediaRecorder` and may depend on browser support. WebM output is expected.
+- If video export returns an empty file, try Chrome or Edge first. If it persists, capture console logs and report.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
+- `app/page.tsx`: main UI and smash logic
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Roadmap Ideas
+- Animated video exports (multi-frame smashes)
+- Presets for different smash styles
+- Output gallery/history
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+TBD
