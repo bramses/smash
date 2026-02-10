@@ -645,6 +645,24 @@ export default function Home() {
             Add text lines or drop in images and audio. Each smash generates a
             new randomized composite canvas.
           </p>
+          <div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-zinc-400">
+            <a
+              className="rounded-full border border-zinc-800 px-3 py-1 transition hover:border-zinc-500"
+              href="https://github.com/bramses/smash"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              className="rounded-full border border-zinc-800 px-3 py-1 transition hover:border-zinc-500"
+              href="https://bramadams.dev"
+              target="_blank"
+              rel="noreferrer"
+            >
+              bramadams.dev
+            </a>
+          </div>
         </header>
 
         <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
