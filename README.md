@@ -42,6 +42,10 @@ Open `http://localhost:3000`.
 - Video export uses `MediaRecorder` and may depend on browser support. WebM output is expected.
 - If video export returns an empty file, try Chrome or Edge first. If it persists, capture console logs and report.
 
+## Links
+- https://github.com/bramses/smash
+- https://bramadams.dev
+
 ## Project Structure
 - `app/page.tsx`: main UI and smash logic
 
